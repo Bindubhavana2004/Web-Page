@@ -1,0 +1,1010 @@
+Reset default styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  font-family: "Poppins", sans-serif;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Full-screen background for the home page */
+.home-section {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-image: url('assets/ayodhya.webp');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  position: relative;
+}
+
+/* Header styling */
+header {
+  position: fixed;
+  top: 35px;
+  width: 100%;
+  /* background: rgba(0, 0, 0, 0.5);  */
+  color: white;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+/* Navbar sections */
+.navbar {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Left section for company name */
+.navbar-left {
+  flex: 1; /* Takes up remaining space */
+  padding-left: 200px; /* Add space between the left side and the content */
+
+}
+
+.navbar-left li {
+  display: inline;
+  list-style: none;
+}
+
+.navbar-left a {
+  color: white;
+  font-family: "Poppins", sans-serif;
+  text-decoration: none;
+  letter-spacing: 1px; /* Add spacing between the letters */
+
+  font-size: 16px;
+}
+/* Center section for navigation links */
+.navbar-center {
+  flex: 2; /* Takes more space */
+  text-align: center;
+}
+
+.navbar-center li {
+  display: inline;
+  margin: 0 15px;
+  list-style: none;
+}
+
+.navbar-center a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+
+  font-family: "Poppins", sans-serif;
+  position: relative; /* Position relative to allow for absolute positioning of the underline */
+  padding-bottom: 8px; /* Add padding between the text and underline */
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar ul {
+    flex-direction: column; /* Stack items */
+    text-align: center;
+  }
+
+  .navbar-right a {
+    background-color: transparent;
+  }
+}
+.navbar-center a::after {
+  content: ''; /* Creates the underline */
+  position: absolute;
+  bottom: 0; /* Position it just below the text */
+  left: 0;
+  width: 0; /* Initially no width */
+  height: 2px; /* Height of the underline */
+  background-color: #e82574; /* Red color */
+  transition: width 0.3s ease; /* Animate the width */
+}
+
+.navbar-center a:hover::after {
+  width: 100%; /* On hover, the width expands to 100% */
+}
+
+.navbar-center a:hover {
+  color: white; /* Ensure text remains white when hovered */
+}
+
+
+
+/* Right section for Book Now */
+.navbar-right {
+  flex: 1;
+  padding-right: 200px; 
+
+  text-align: right;
+}
+
+.navbar-right li {
+  display: inline;
+  list-style: none;
+}
+
+.navbar-right a {
+  color: white;
+  text-decoration: none;
+  /* letter-spacing: 1px; Add spacing between the letters */
+  font-weight: bold;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  padding: 15px 30px;
+  background-color: #e82574; /* Red color */
+  border-radius: 5px;
+}
+
+.navbar-right a:hover {
+  background-color: rgba(58, 26, 39, 0.2); /* Red color with 20% opacity */
+}/* Keyframes for the bottom-to-top animation */
+@keyframes slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(50px); /* Start below */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* End at normal position */
+  }
+}
+
+/* Paragraph Animation */
+.home-section p {
+  font-size: 1.2rem;
+  font-family: 'Poppins', sans-serif;
+  color: #ffffff;
+  opacity: 0; /* Initially hidden */
+  transform: translateY(50px); /* Start below */
+  animation: slide-up 1s ease-out forwards; /* Slide up effect */
+  animation-delay: 0.5s; /* Delay for smooth appearance after loading */
+  margin-bottom: 20px;
+}
+
+/* Heading Animation */
+.home-section h1 {
+  font-size: 36px;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  color: rgb(252, 250, 250);
+  font-weight: 500;
+  opacity: 0; /* Initially hidden */
+  transform: translateY(50px); /* Start below */
+  animation: slide-up 1s ease-out forwards; /* Slide up effect */
+  animation-delay: 1s; /* Delay after paragraph animation */
+  margin: 0;
+}
+
+/* Styling for lines within the heading */
+.home-section h1 .line1, 
+.home-section h1 .line2 {
+  font-size: 64px;
+  font-weight: bold;
+  color: rgb(252, 250, 250);
+}
+
+.home-section h1 .guest-house {
+  color: #e82574;
+  font-weight: bold;
+}
+
+/* Styles for the white container section */
+.white-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px;
+  background-color: white;
+}
+
+
+
+.book-now-btn {
+  padding: 15px 30px;
+  background-color:  #e82574; /* Button color */
+  color: #ffffff; /* Red color for "Guest House" */
+  text-decoration: none;
+  font-size: 18px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  position: relative;
+  top: -59px; /* Moves the button slightly upwards to be at the joining point */
+}
+.book-now-btn:hover {
+  background-color: rgba(58, 26, 39, 0.2); /* Button hover color */
+}
+/* General Section Styling */
+.white-container {
+  padding: 50px;
+  background-color: #fff;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@keyframes slideInUp {
+  from {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.about-us-container {
+  display: flex;
+  max-width: 1200px;
+  gap: 20px;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  align-items: center;
+  width: 100%; /* Ensure full width for the container */
+}
+
+.about-image {
+  flex: 1; /* Allow image to take up equal width */
+  max-width: 50%; /* Ensure image doesn't exceed 50% of the container width */
+}
+/* Left-to-Right Animation for Image */
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100px); /* Start off to the left */
+    opacity: 0; /* Start with no opacity */
+  }
+  to {
+    transform: translateX(0); /* End in its original position */
+    opacity: 1; /* Fully visible */
+  }
+}
+.about-image img {
+  width: 75%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: 0.5s;
+  animation: slideInLeft 1s ease-out;
+}
+
+.about-content {
+  flex: 1; /* Allow content to take up equal width */
+  padding: 20px;
+  max-width: 50%; /* Ensure text doesn't exceed 50% of the container width */
+}
+
+.about-content h1 {
+  font-size: 40px;
+  color: #000000;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  margin-left: -50px;
+  animation: slideInUp 1s ease-out;
+  animation-delay: 0.5s;
+
+}
+.about-content h2 {
+  font-size: 16px;
+  color: #000000;
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 15px;
+  margin-left: -30px;
+  animation: slideInUp 1s ease-out;
+  animation-delay: 0.3s;
+}
+.line {
+  display: inline-block;
+  width: 5rem;  /* Adjust width of the line */
+  height: 3px;  /* Line thickness */
+  background-color:#e82574; /* Replace with the desired color */
+  margin-left: 1rem; /* Space between text and line */
+  animation: slideInUp 1s ease-out;
+  animation-delay: 0.3s;
+  vertical-align: middle; /* Aligns the line vertically with the text */
+}
+.about-content p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  margin-left: -30px;
+  animation: slideInUp 1s ease-out;
+  animation-delay: 0.7s;
+
+}
+.btn{
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #e82574;;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  margin-top: 10px;
+  margin-left: -30px;
+  transition: background-color 0.3s ease;
+  animation: slideInUp 1s ease-out;
+  animation-delay: 0.9s;
+}
+
+.btn:hover {
+  background-color: rgba(58, 26, 39, 0.2); /* Button hover color */
+}
+
+h4 {
+  font-size: 18px; /* Size of the address text */
+  font-family: 'Poppins', sans-serif; /* Font for the address */
+  color: #333333; /* Dark color for the address text */
+
+  margin: 10px 0; /* Adjust the spacing above and below the address */
+}
+
+h4 a {
+  color: #551a8b; /* Color of the link (blue) */
+  text-decoration: none; /* Remove the underline from the link */
+  font-weight: bold; /* Make the link text bold */
+  margin-left: -30px;
+
+  transition: color 0.3s ease; /* Smooth transition when hovering */
+}
+
+h3 {
+  font-size: 18px; /* Adjusts the font size for the contact heading */
+  font-family: 'Poppins', sans-serif; /* Sets the font for the heading */
+  color: #333333; /* Dark grey color for the text */
+  margin: 10px 0; /* Adds space above and below the <h4> element */
+}
+
+h3 a {
+  color: #1a73e8; /* Sets the link color to blue */
+  margin-left: -30px;
+
+  text-decoration: none; /* Removes the underline from the link */
+  font-weight: bold; /* Makes the link text bold */
+  transition: color 0.3s ease; /* Smooth transition effect for hover */
+}
+
+/* Rooms Section Styling */
+.section__container {
+  padding: 50px 10px;
+  text-align: left;
+  background-color: #f9f9f9;
+}
+
+.section__subheader {
+  font-size: 18px;
+  margin-left: 120px;
+  color: #000000;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.line3 {
+  display: inline-block;
+  width: 5rem;  /* Adjust width of the line */
+  height: 3px;  /* Line thickness */
+  background-color:#e82574; /* Replace with the desired color */
+  margin-left: 1rem; /* Space between text and line */
+
+  vertical-align: middle; /* Aligns the line vertically with the text */
+}
+
+.section__header {
+  font-size: 32px;
+  color: #000000;
+  margin-left: 120px;
+  margin-bottom: 40px;
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.room__grid {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-left: 100px;
+  justify-content: left;
+  animation: slideInUp 1s ease-out;
+  animation-delay: 0.5s;
+}
+
+.room__card {
+  background: #fff;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: 20px;
+  text-align: left;
+  position: relative; /* Make sure the card is positioned relative to contain the absolute icon */
+}
+
+.room__card__image img {
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid #ddd;
+}
+.room__card__icons {
+  display: flex;
+  gap: 10px;
+  position: absolute;  /* Position absolutely within the room card */
+  bottom: 250px; /* Adjust the position of icons as per your requirement */
+  right: 10px; /* Align icons at the bottom-right of the image */
+  z-index: 10; /* Ensure icons appear above the image */
+}
+
+.room__card__icons span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px; /* Size of the circular container */
+  height: 40px; /* Size of the circular container */
+  background-color: white; /* Set background to white */
+  border-radius: 50%; /* Make the container round */
+  padding: 8px; /* Padding inside the icon container */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow */
+}
+
+/* Icon colors inside each circle */
+.room__card__icons span:nth-child(1) i {
+  color: #f472b6; /* Red for the first icon */
+}
+
+.room__card__icons span:nth-child(2) i {
+  color: #c084fc; /* Blue for the second icon */
+}
+
+.room__card__icons span:nth-child(3) i {
+  color: #60a5fa; /* Green for the third icon */
+}
+
+/* Icon size */
+.room__card__icons i {
+  font-size: 18px; /* Adjust icon size */
+}
+
+.room__card__details {
+  padding: 20px;
+}
+
+.room__card__details h4 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.room__card__details p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #666;
+}
+
+.room__card__details h5 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+.room__card__details h5 span {
+  color: #e82574;
+}
+
+.room__card__details .btn1 {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #e82574;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-left: 1px;
+  cursor: pointer;
+}
+
+.room__card__details .btn1:hover {
+  background-color: #c61f5f;
+}
+
+
+/* General Styling for the Services Section */
+.service {
+  background: url('assets/palash.webp') no-repeat center center; /* Your image path */
+  background-size: cover; /* Cover the entire section */
+  display: flex; /* Flexbox to align the content */
+  justify-content: flex-end; /* Align the content to the right */
+  align-items: center; /* Vertically center the content */
+  height: 500px; /* Set a height for the section */
+  padding: 20px;
+  position: relative; /* Position relative for the white box */
+}
+
+.service__container {
+  width: 45%; /* Set the width for the content container */
+  height: 109%;
+  background-color: white; /* White background for the content box */
+  padding: 40px; /* Padding inside the box */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Optional box shadow */
+margin-right: 100px;
+}
+
+/* Header styles */
+.section__subheader {
+  font-size: 18px;
+  color: #333;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-left: 5px;
+
+  margin-bottom: 10px;
+}
+
+.section__header {
+  font-size:40px;
+  color: #000000;
+  margin-bottom: 40px;
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+.service__list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column; /* Change to vertical layout (1 item per row) */
+  gap: 20px;
+}
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.service__list li {
+  display: flex;
+  align-items: center;
+  font-size: 22px;
+  color: #333;
+  width: 70%; /* Take up full width for each item */
+margin-bottom: 18px;
+font-family: "Poppins", sans-serif;
+  opacity: 0; /* Initially hidden */
+  animation: slideInRight 0.8s ease forwards; /* 0.8s animation duration */
+}
+
+.service__list li:hover {
+  transform: translateY(-5px);
+}
+
+.service__list span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  border-radius: 50%;
+  margin-right: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.line4 {
+  display: inline-block;
+  width: 5rem;  /* Adjust width of the line */
+  height: 3px;  /* Line thickness */
+  background-color:#e82574; /* Replace with the desired color */
+  margin-left: 1rem; /* Space between text and line */
+
+  vertical-align: middle; /* Aligns the line vertically with the text */
+}
+.service__list i {
+  font-size: 24px;
+  color: #e82574;
+}
+
+/* Adjust color of icons */
+.service__list li:nth-child(1) i {
+  color: #e82574; /* Red for first icon */
+
+}
+
+.service__list li:nth-child(2) i {
+  color: #1e90ff; /* Blue for second icon */
+
+}
+
+.service__list li:nth-child(3) i {
+  color: #32cd32; /* Green for third icon */
+}
+
+.service__list li:nth-child(4) i {
+  color: #f39c12; /* Orange for fourth icon */
+
+}
+
+
+.section__container1 {
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 90px}
+
+  .banner__content {
+    padding: 2rem;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    border-radius: 10px;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
+}
+.banner__card h4 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+.banner__card p {
+  color: #333;
+  margin-left: -30px;
+}
+
+/* General Styles */
+#gallary {
+  padding: 40px 0;
+  background-color: #f9f9f9;
+}
+
+.section__subheader {
+  font-size: 24px;
+  color: #333;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+/* Gallery Styling */
+.container11 {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 15px;
+  padding: 20px;
+}
+
+.box11 {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.box11 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+}
+
+.box11:hover img {
+  transform: scale(1.1); /* Zoom effect on hover */
+}
+
+/* Popup Styling */
+#popup {
+  display: none; /* Initially hidden */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8); /* Dark overlay */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup__img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.popup .close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+}
+
+.popup .close:hover {
+  color: red;
+
+
+}/* Container styling */
+.contact-container12 {
+  display: flex;
+  justify-content: space-between; /* Adds space between the containers */
+  align-items: flex-start; /* Aligns items at the top */
+  width: 60%;
+  max-width: 1200px;
+  margin: 40px auto 0; /* Adds margin-top of 40px, centers horizontally, and keeps no bottom margin */
+  margin-bottom: 50px;
+}
+
+
+/* Left section (Contact Info) styling */
+.contact-info12 {
+  background-color:#e82574; /* Replace with the desired color */
+  color: white; /* White text */
+  margin-top: 80px;
+  padding: 20px;
+  margin-right: -70px;
+  border-radius: 8px;
+  text-align: center;
+  flex: 0.8; /* Makes both containers flexible */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative; /* Allows positioning */
+  top: -20px; /* Moves the left container up */
+  animation: slideInLeft 1s ease-in-out; /* Add animation */
+
+}
+
+/* Right section (Contact Form) styling */
+.contact-form12 {
+  animation: slideInRight 1s ease-in-out; /* Add animation */
+
+  background-color: white;
+  color: #333;
+  padding: 20px;
+  border-radius: 8px;
+  flex: 2; /* Makes this container wider than the left one */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Additional styles (Form groups, buttons, etc.) remain the same */
+.contact-info12 a {
+  color: white; /* Ensures links are always white */
+  text-decoration: none; /* Removes the underline */
+}
+
+.contact-info12 a:visited {
+  color: white; /* Ensures visited links stay white */
+}
+
+.contact-info12 a:hover {
+  color: #ddd; /* Optional: Slightly lighter color on hover */
+}
+
+.contact-info12 a:active {
+  color: white; /* Ensures active links are also white */
+}
+
+.contact-form12 h2,
+.contact-info12 h2 {
+  margin-left: +80px;
+
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+/* Form group styling */
+.form-group12 {
+  display: flex;
+  gap: 15px;
+  margin-left: +80px;
+  margin-bottom: 15px;
+}
+
+.form-group12 input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+/* Textarea styling */
+textarea {
+  width: 86.5%;
+  margin-right: 15px;
+margin-left: +80px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  resize: none;
+  height: 80px;
+  margin-bottom: 15px;
+}
+
+/* Submit button styling */
+.submit-btn12 {
+  background-color:#e82574; /* Replace with the desired color */
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  margin-left: +80px;
+
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.submit-btn12:hover {
+  background-color:#e82574; /* Replace with the desired color */
+}
+
+/* Social icons styling */
+.social-icons12 {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.social-icons12 i {
+  font-size: 1.5rem;
+  color: white;
+  cursor: pointer;
+}
+
+.social-icons12 i:hover {
+  opacity: 0.8;
+}
+/* Add animations for left and right containers */
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+.footer {
+  background-color: #0c0a09;  /* Black background */
+  color: #ffffff;             /* White text color */
+  padding: 40px 0;
+}
+
+.footer a {
+  text-decoration: none;
+  color: #f4e1d2; /* Cream-colored links */
+}
+
+.footer a:hover {
+  color: var(--primary-color);  /* Hover effect on links */
+}
+
+.footer__container {
+  max-width: var(--max-width);
+  background-color: #0c0a09;  /* Ensure the background is black */
+  padding: 0 100px;  /* Add 30px padding on both left and right */
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer__col {
+  color: #ffffff;    /* White text inside columns */
+  width: 22%;
+  margin-bottom: 20px;
+}
+
+.footer__col h4 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #ffffff;  /* White titles */
+}
+
+.footer__col ul {
+  list-style-type: none;
+}
+
+.footer__bar {
+  text-align: center;
+  padding: 10px;
+  background-color: var(--primary-color-dark);  /* Darker background for footer bar */
+  color: var(--white);  /* White text for footer bar */
+}
+
+@media (max-width: 768px) {
+  .footer__container {
+    display: block;
+  }
+
+  .footer__col {
+    width: 100%;  /* Columns take up the full width on smaller screens */
+    margin-bottom: 20px;
+  }
+}
+.footer__socials {
+  display: flex;  /* Aligns the icons horizontally */
+  gap: 15px;      /* Space between the icons */
+  margin-top: 20px; /* Add some space above the social icons */
+}
+
+.footer__socials a {
+  display: inline-block;  /* Make the link block-level for clickable area */
+}
+
+.footer__socials img {
+  width: 30px;     /* Set the size of the social media icons */
+  height: 30px;    /* Ensure the icons are square */
+  transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth transition on hover */
+}
+
+.footer__socials img:hover {
+  transform: scale(1.1);  /* Slightly enlarge the icon on hover */
+  opacity: 0.8;           /* Make the icon slightly transparent on hover */
+}
+.btn1{
+  padding: 10px 15px;
+  background-color:  #e82574; /* Button color */
+  color: #ffffff; /* Red color for "Guest House" */
+  text-decoration: none;
+  font-size: 14px;
+  border-radius: 5px;}
+
+
+  .footer__bar {
+    text-align: center;              /* Center-align the text */
+    padding: 15px 0;                 /* Add padding to the top and bottom of the footer bar */
+    background-color: var(--primary-color-dark); /* Use the dark primary color for the background */
+    color: #f5f5dc;       
+    
+margin-bottom: -50px;    font-size: 0.9rem;               /* Slightly smaller font size */
+    font-weight: normal;             /* Use normal font weight */
+    letter-spacing: 0.5px;           /* Add slight spacing between letters for readability */
+  }
+  
+  @media (max-width: 768px) {
+    .footer__bar {
+      font-size: 0.85rem;            /* Slightly smaller font size on smaller screens */
+      padding: 12px 0;               /* Reduce padding on smaller screens */
+    }
+  }
+  
